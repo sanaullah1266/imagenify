@@ -7,9 +7,11 @@ import { Webhook } from "svix";
 
 import { createUser, deleteUser, updateUser } from "@/lib/actions/user.actions";
 
+
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
+
 
   if (!WEBHOOK_SECRET) {
     throw new Error(
@@ -115,3 +117,6 @@ export async function POST(req: Request) {
 
   return new Response("", { status: 200 });
 }
+
+//this is the end of the webhooks here
+
